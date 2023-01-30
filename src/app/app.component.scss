@@ -1,0 +1,20 @@
+.main {
+    background-color: rgb(47, 49, 54);
+    min-height: 100%; 
+    min-width: 100%;
+}
+
+.sidebar {
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    color: lightgray;
+    border-right: 1px solid rgb(20, 20, 20);
+    position: fixed;
+}
+
+.content {
+    left: 30%;
+    position: relative;
+    display: inline-block;
+}

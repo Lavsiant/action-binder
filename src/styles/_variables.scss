@@ -1,0 +1,287 @@
+$font-path-assistant: "/fonts/assistant";
+
+// Media Query
+
+$media-sm: 768px;
+$media-md: 1024px;
+$media-lg: 1280px;
+$media-xl: 1400px;
+
+// Fonts
+$main-font: "assistant", Helvetica, sans-serif;
+
+$font-thin:         "roboto-thin", sans-serif;
+$font-thinItalic:   "Roboto-thinItalic", sans-serif;
+$font-light:        "Roboto-light", sans-serif;
+$font-lightItalic:  "Roboto-lightItalic", sans-serif;
+$font:              "roboto", sans-serif;
+$font-medium:       "Roboto-medium", sans-serif;
+$font-mediumItalic: "Roboto-mediumItalic", sans-serif;
+$font-bold:         "Roboto-bold", sans-serif;
+$font-boldItalic:   "Roboto-boldItalic", sans-serif;
+$font-black:        "Roboto-black", sans-serif;
+$font-blackItalic:  "Roboto-blackItalic", sans-serif;
+
+
+// color
+
+$color-danger:             #ff1719;
+$color-warning:            #FB761D;
+$default-color-blue:       #00889E;
+$default-color-yellow:     #c48a01;
+$default-color-orange:     #F87214;
+$default-color-turquoise:  #29BBC1;
+$default-color-green:      #52C403;
+$default-color-bright-blue:#002169;
+$default-color-light-green:#D9DB32;   
+$default-color-gray:       #999999;
+
+$default-color-black:      #000;
+$default-background-black: #000;
+$default-border-black:     #000;
+
+$color-white-blue:        #E9EFF1;
+
+$default-color-white:      #fff;
+$default-background-white: #fff;
+$default-border-white:     #fff;
+
+$box-shadow:              #f2f2f2;
+$box-shadow-black:        #000;
+$box-shadow-gray:         #ccc;
+
+$grey-text:               #b4b4b3;
+$grey-background:         #b4b4b3;
+$grey-input-border:       #b4b4b3;
+
+$light-text:              #eaeced;
+$light-background:        #eaeced;
+$light-color-border:      #eaeced;
+
+$almost-white-background: #fafafa;
+
+$other-grey-background:   #F6F6F8;
+
+$deep-grey-border:        #d8d8d8;   
+$deep-grey-background:    #d8d8d8;    
+
+$grey-value-text:         #565656;
+$grey-value-border:       #565656;
+$grey-value-bg:           #565656;
+
+$grey-dark-text:          #373737;
+$grey-dark-border:        #373737;
+
+$gray-moderately-text:       #ccc;
+$gray-moderately-border:     #ccc;
+$gray-moderately-background: #ccc;
+
+$grey-hover:              #efefef;
+$grey-disabled:           #e5e5e5;
+$grey-hover-block:        #757575;
+
+$grey-label-text:         #808080;
+
+$color-piker:             #EAEDEE;
+$color-piker-next:        #F6F3F3;
+$color-piker-dark:        #333;
+$color-shield:            #148200;
+
+$bg-grey:                 #F5F5F5;
+$bg-scroll:               #9E9E9E;
+$expedite-color:          #f15a29;
+
+$assitive-default-color: rgba(0,0,0,.45);
+
+$breadcrumb-bg: #F3F3F3;
+
+$tooltip-bg: #757575;
+$tooltip-error-msg: #E40029;
+$tooltip-bg-light: #eaeced;
+
+// color themes
+$themes-abf:              #0e406a;
+$bright-abf:              #f15a29;
+$bright-abf2:             #0e406a;
+
+$abf-lending-primary:          #054670;
+$abf-lending-primary-text:     #05446C;
+$abf-lending-primary-bg:       #05446C;
+$abf-lending-secondary:        #F05A2B;
+$abf-secondary-dark:           #d85024;
+
+$itm-color-error:         #B00020;
+
+$tms-icon-grey: #7d7d7d;
+
+$themes: (
+  abf: (
+    delivered:                          #343f40,
+    pickup:                             #000f9f,
+    exception:                          #f25c08,
+    delivery:                           #148200,
+    lateDelivery:                       #941b04,
+    missedDelivery:                     #ff1719,
+    missedPickup:                       #FB761D,
+    mainBackground:                     #fff,
+    blackBackground:                    #000,
+    whiteColor:                         #fff,
+    blackColor:                         #000,
+    primaryColor:                       #0e406a,
+    primaryOpacityColor:                #0e406a21,
+    primaryOpacityRGBAColor:            rgba(14, 64, 106, 0.26),
+    primaryUnspecifiedBackgorundColor:  rgba(14, 64, 106, 0.1),
+    primaryDarkColor:                   #135c99,
+    secondaryColor:                     #f15a29,
+    secondaryLightColor:                #f3cab2,
+    secondaryRGB:                       #f7ac94,
+    secondaryDarkColor:                 #d85024,
+    activeColor:                        #f15a29,
+    errorColor:                         #ff1719,
+    alertWarnColor:                     #f15a29,
+    alertSuccessColor:                  #0e406a,
+    alertErrorColor:                    #ff1719,
+    alertInfoColor:                     #0e406a,
+    alertWarnOpacityColor:              rgba(#f15a29, .1),
+    alertSuccessOpacityColor:           rgba(#0e406a, .1),
+    alertErrorOpacityColor:             rgba(#ff1719, .1),
+    alertInfoOpacityColor:              rgba(#0e406a, .1), 
+    iconStarAnimation:                  rgba(#f15a29, .26),
+    avatarUrl:        url("/images/no-avatar.svg"),
+    buddyUrl:         url("/images/buddy-abf.svg"),
+    holidayBuddyUrl:  url("/images/buddy-holiday-abf.svg"),
+    buddyEmptyMapUrl: url("/images/buddy-empty-map-abf.svg"),
+    unassignIcon:     url("/images/theme-images/abf/unassign-manager-abf.svg"),
+    assignIcon:       url("/images/theme-images/abf/assign-manager-abf.svg"),
+    removedLocation:  url("/images/theme-images/abf/removal-location2-abf.svg"),
+    handsError:       url("/images/theme-images/abf/hands-error.svg"),
+    unassignOther:    url("/images/theme-images/abf/unassign.svg"),
+    alertsDays:       url("/images/theme-images/abf/alerts-days.svg"),
+    assignSalesRep:   url("/images/theme-images/abf/assign-sales-rep.svg"),
+    icon3thLocation:  url("/images/theme-images/abf/3td-location.svg"),
+  ),
+);
+
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($key, $color) {
+  @keyframes #{$key} {
+    from    {box-shadow: $color 0 0px 0px 0px}
+    20%     {box-shadow: rgba($color, 0.5) 0 0px 0px 3px;}
+    30%     {box-shadow: rgba($color, 0.5) 0 0px 0px 5px;}
+    40%     {box-shadow: rgba($color, 0.5) 0 0px 0px 6px;}
+    50%     {box-shadow: rgba($color, 0.5) 0 0px 0px 7px;}
+    60%     {box-shadow: rgba($color, 0.5) 0 0px 0px 8px;}
+    70%     {box-shadow: rgba($color, 0.1) 0 0px 0px 10px;}
+    80%     {box-shadow: rgba($color, 0.1) 0 0px 10px 10px;}
+    to      {box-shadow: rgba($color, 0.1) 0 0px 20px 15px;}
+  }
+  animation-name: #{$key};
+}
+
+@mixin blinker($key, $color, $color2) {
+  @keyframes #{$key} {
+    from {
+      color: #000;
+      box-shadow: rgba($color, 0.2) 0 0px 1px 1px;
+    }
+    to {
+      color: $color;
+      box-shadow: rgba($color, 0.3) 0 0px 2px 1px;
+    }
+  }
+  text-decoration: blink;
+  animation-name: #{$key};
+  animation-duration: 1.5s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+	animation-direction: alternate;
+}
+
+@mixin blinkerColor($key, $color, $color2) {
+  @keyframes #{$key} {
+    from {
+      color: $color2;
+      border-color: $color2;
+    }
+    to {
+      color: $color;
+      border-color: $color;
+    }
+  }
+  text-decoration: blink;
+  animation-name: #{$key};
+  animation-duration: 1.5s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+	animation-direction: alternate;
+}
+
+@mixin blinkerBg($key, $color, $color2) {
+  @keyframes #{$key} {
+    from {
+      background: $color2;
+      border-color: $color2;
+    }
+    to {
+      background: $color;
+      border-color: $color;
+    }
+  }
+  text-decoration: blink;
+  animation-name: #{$key};
+  animation-duration: 1.5s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+	animation-direction: alternate;
+}
+
+@mixin blinkBg($key, $color, $color2) {
+  @keyframes #{$key} {
+    from {
+      color: $color2;
+      background: $color;
+    }
+    to {
+      color: $color;
+      background: $color2;
+    }
+  }
+  text-decoration: blink;
+  animation-name: #{$key};
+  animation-duration: 1.5s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+	animation-direction: alternate;
+}
