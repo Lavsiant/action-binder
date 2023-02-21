@@ -1,0 +1,10 @@
+<mat-form-field appearance="outline">
+    <mat-label>HotKey</mat-label>
+    <input  
+        #hotkeyInput
+        matInput placeholder="Click to set hotkey"    
+        (keypress)="handleHotkeyInputKeyPress($event)"
+        (blur)="handleHotkeyInputBlur()"
+        (focus)="handleHotkeyInputFocus()"
+        [value]="hotkeyString">
+</mat-form-field>

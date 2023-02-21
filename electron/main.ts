@@ -1,20 +1,33 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import * as path from "path";
 import * as url from "url";
-import * as fs from "fs";
 
 let win: BrowserWindow | null;
 
-function createWindow() {
-  win = new BrowserWindow({ width: 800, height: 600 });
+require('@electron/remote/main').initialize();
 
-  win.loadURL(
-    url.format({
-      pathname: path.join(__dirname, `/../../dist/action-binder/index.html`),
-      protocol: "file:", 
-      slashes: true
-    })
-  );
+require("@electron/remote/main").enable(); 
+
+function createWindow() {
+  win = new BrowserWindow({
+      width: 800,
+      height: 500,
+      webPreferences: {
+        nodeIntegration: true,
+        contextIsolation: false,
+        
+    }
+  }); 
+
+  // win.loadURL(
+  //   url.format({
+  //     pathname: path.join(__dirname, `/../../dist/action-binder/index.html`),
+  //     protocol: "file:", 
+  //     slashes: true
+  //   })
+  // );
+
+  win.loadURL('http://localhost:4200');
 
   win.webContents.openDevTools();
 

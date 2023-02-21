@@ -1,0 +1,29 @@
+.card {
+    width: 90%;
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.setting-header {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.inline-setting {
+    padding-right: 30px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+.button-control {
+    font-size: 18px;
+    border: 1px solid lightgray;
+}
+
+.button-control:disabled{
+    opacity: 0.3;
+  }

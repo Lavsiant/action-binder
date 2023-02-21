@@ -1,5 +1,5 @@
 export enum ActionType {
     Initial,
-    Processing,
+    Intermediate,
     Output
 }

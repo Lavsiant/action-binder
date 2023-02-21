@@ -1,0 +1,104 @@
+<form [formGroup]="form">
+    <div class="card hotkey-card">
+        <div class="jc-c">
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Binding name</mat-label>
+                    <input formControlName="name" matInput placeholder="">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <hotkey-input *ngIf="binding" [hotkeyString]="getStringHotkey(binding)" formControlName="hotkey">
+                </hotkey-input>
+            </div>
+
+            <mat-divider></mat-divider>
+            <div class="setting-header">Initial Action</div>
+
+            <div class="d-f">
+                <mat-form-field appearance="outline" class="inline-setting">
+                    <mat-label>Select Action</mat-label>
+                    <mat-select formControlName="initialAction" (selectionChange)="onInitialActionChange()">
+                        <mat-option *ngFor="let option of initialActionDropdownData"
+                            [value]="option.value">{{option.text}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <span *ngIf="form.value.initialAction && form.value.initialAction.outputType"
+                    class="setting-header inline-setting ">
+                    Output value: {{getStringOutputType(form.value.initialAction)}}
+                </span>
+            </div>
+
+            <mat-divider></mat-divider>
+            <div class="setting-header">Intermediate Actions</div>
+
+            <div *ngFor="let actionGroup of intermediateActionsForm.controls; let i = index;" class="d-f">
+                <div>
+                    <mat-form-field appearance="outline" class="inline-setting">
+                        <mat-label>Select Action</mat-label>
+                        <mat-select [formControl]="getAbstractControlAsFormControl(actionGroup)">
+                            <mat-option *ngFor="let option of getIntermediateActionOptions(i); trackBy: trackByOption"
+                                [value]="option.value">{{option.text}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <span *ngIf="actionGroup.value && actionGroup.value.outputType !== null"
+                        class="setting-header inline-setting ">
+                        Input value: {{getStringInputType(actionGroup.value)}}
+                    </span>
+
+                    <span *ngIf="actionGroup.value && actionGroup.value.outputType !== null"
+                        class="setting-header inline-setting ">
+                        Output value:  {{getStringOutputType(actionGroup.value)}}
+                    </span>
+
+                    <button class="button-control" 
+                        mat-button color="warn"
+                        (click)="deleteIntermediateActionAt(i)">
+                            Delete
+                    </button>
+                </div>
+            </div>
+
+
+            <button class="button-control m-b-20" [disabled]="!isInitialActionSelected" mat-button color="primary"
+                (click)="addIntermediateAction()">
+                <span class="c-lg">Add action</span>
+            </button>
+
+
+            <mat-divider></mat-divider>
+            <div class="setting-header">Output Action</div>
+
+            <div class="d-f">
+                <mat-form-field appearance="outline" class="inline-setting">
+                    <mat-label>Select Action</mat-label>
+                    <mat-select formControlName="outputAction">
+                        <mat-option *ngFor="let option of getOutputActionOptions(); trackBy: trackByOption"
+                            [value]="option.value">{{option.text}}
+                        </mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+
+                <span *ngIf="form.value.outputAction && form.value.outputAction.inputType !== null"
+                    class="setting-header inline-setting ">
+                    Input value: {{getStringInputType(form.value.outputAction)}}
+                </span>
+            </div>
+
+
+            <mat-divider></mat-divider>
+
+            <div class="d-f jc-c">
+                <button class="button-control m-t-20 m-b-20" [disabled]="!isFormValid" mat-button color="primary"
+                    (click)="onSubmit()">
+                    <span class="c-lg">Save binding</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</form>

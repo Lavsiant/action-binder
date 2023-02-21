@@ -1,19 +1,28 @@
-import { Action } from "./actions/action.model";
+import { Action } from "./action/action.model";
+import { generateGuid } from "./common/id-generator.function";
+import { IdentifiedEntityDefinition } from "./definitions/identified-entity.definition";
 import { Keys } from "./enums/keyboard.enum";
 
 
-export class Binding {
+export class Binding implements IdentifiedEntityDefinition<string> {
+    id: string;
     name: string;
-    keys: Keys[];
-    actions: Action[];
+    hotkey: Keys[];
+    initialAction: Action;
+    intermediateActions: Action[];
+    outputAction: Action;
 
-    constructor(name: string, keys: Keys[]) {
-        this.name = name;
-        this.keys = keys;
-        this.actions = [];
+    isEnabled: boolean = false;
+
+    constructor() {
     }
+            
 
-    get stringHotkey() : string{
-        return this.keys.map(x => x.toString()).join(' + ');
-    } 
+    update(binding: Binding) {
+        this.name = binding.name;
+        this.hotkey = binding.hotkey;
+        this.initialAction = binding.initialAction;
+        this.intermediateActions = binding.intermediateActions;
+        this.outputAction = binding.outputAction;
+    }
 }
